@@ -1,0 +1,28 @@
+while True:
+    operacija = input("Izberi operacijo (+, -, *, /) ali 'konec': ").strip().lower()
+
+    if operacija == "konec":
+        break
+
+    if operacija not in ["+", "-", "*", "/"]:
+        print("Napačna operacija!")
+        continue
+
+    try:
+        a = float(input("Vnesi prvo število: "))
+        b = float(input("Vnesi drugo število: "))
+
+        if operacija == "+":
+            print("Rezultat:", a + b)
+        elif operacija == "-":
+            print("Rezultat:", a - b)
+        elif operacija == "*":
+            print("Rezultat:", a * b)
+        elif operacija == "/":
+            if b == 0:
+                print("Deljenje z 0 ni mogoče!")
+            else:
+                print("Rezultat:", a / b)
+
+    except ValueError:
+        print("Vnesti moraš veljavno število!")
