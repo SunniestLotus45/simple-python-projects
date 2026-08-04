@@ -1,0 +1,26 @@
+import random
+
+poteze = ["kamen", "skarje", "papir"]
+
+while True:
+    izbira_igralca = input("Izberi (kamen, skarje, papir ali konec): ").lower().strip()
+
+    if izbira_igralca == "konec":
+        break
+
+    if izbira_igralca not in poteze:
+        continue
+
+    izbira_racunalnika = random.choice(poteze)
+    print(f"Računalnik: {izbira_racunalnika}")
+
+    if izbira_igralca == izbira_racunalnika:
+        print("Neodločeno!")
+    elif (
+        (izbira_igralca == "kamen" and izbira_racunalnika == "skarje")
+        or (izbira_igralca == "skarje" and izbira_racunalnika == "papir")
+        or (izbira_igralca == "papir" and izbira_racunalnika == "kamen")
+    ):
+        print("Zmagal si!")
+    else:
+        print("Računalnik je zmagal!")
