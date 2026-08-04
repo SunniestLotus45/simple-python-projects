@@ -1,0 +1,9 @@
+import random
+import string
+
+dolzina = int(input("Vnesi dolžino gesla: "))
+
+znaki = string.ascii_letters + string.digits + string.punctuation
+geslo = "".join(random.choice(znaki) for _ in range(dolzina))
+
+print("Tvoje geslo:", geslo)
